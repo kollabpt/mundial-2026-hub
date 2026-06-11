@@ -1,0 +1,1 @@
+{"name":"mundial-2026-hub","version":"1.0.0","private":true,"scripts":{"dev":"vercel dev","check":"node --check app.js && node --check data.js && node --check api/football.js"},"engines":{"node":">=18"},"devDependencies":{"vercel":"^44.0.0"}}
