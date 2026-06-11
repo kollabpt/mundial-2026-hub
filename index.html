@@ -1,39 +1,35 @@
 <!doctype html>
 <html lang="pt">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mundial 2026 Hub</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="hero">
-    <nav><strong>Mundial 2026 Hub</strong><a href="#jogos">Jogos</a><a href="#selecoes">Selecoes</a><a href="#estadios">Estadios</a><a href="#dados">Dados</a></nav>
-    <section class="hero-copy">
-      <p>FIFA World Cup 2026</p>
-      <h1>Centro inteligente para acompanhar o Mundial em tempo real.</h1>
-      <p>Resultados, calendario, estatisticas, jogadores, estadios, curiosidades e previsoes comparadas com o resultado final.</p>
-      <a class="button" href="#jogos">Ver match center</a>
-    </section>
-  </header>
-  <main>
-    <section class="stats">
-      <article><strong id="matchCount">0</strong><span>jogos monitorizados</span></article>
-      <article><strong id="dataState">Fallback</strong><span>origem dos dados</span></article>
-      <article><strong>16</strong><span>estadios anfitrioes</span></article>
-      <article><strong>48</strong><span>selecoes</span></article>
-    </section>
-    <section id="jogos" class="section">
-      <div class="heading"><div><p class="eyebrow">Match center</p><h2>Resultados e estatisticas</h2><p id="sourceNote"></p></div><div class="filters"><button data-filter="all" class="active">Todos</button><button data-filter="live">Ao vivo</button><button data-filter="finished">Final</button><button data-filter="upcoming">Proximos</button></div></div>
-      <div id="matchGrid" class="grid"></div>
-    </section>
-    <section id="previsoes" class="section split"><div><p class="eyebrow">Modelo</p><h2>Previsoes vs. resultado final</h2><p>As previsoes ficam guardadas antes do jogo e podem ser auditadas depois do apito final.</p></div><div id="predictionTable" class="panel"></div></section>
-    <section id="selecoes" class="section"><div class="heading"><div><p class="eyebrow">Selecoes</p><h2>Plantel e curiosidades</h2></div><input id="teamSearch" placeholder="Pesquisar selecao" /></div><div id="teamGrid" class="grid"></div></section>
-    <section id="estadios" class="section"><p class="eyebrow">Cidades anfitrias</p><h2>Estadios do Mundial 2026</h2><div id="stadiumList" class="list"></div></section>
-    <section id="dados" class="section split"><div><p class="eyebrow">Arquitetura</p><h2>Ligacao aos sistemas certos</h2><p>O Google ajuda como referencia visual, mas o produto deve usar uma API licenciada. A API key fica protegida no backend Vercel.</p></div><div class="grid two"><article><h3>API-Football</h3><p>Fixtures, placares, eventos, equipas, estadios e previsoes.</p></article><article><h3>Vercel</h3><p>Endpoint serverless em /api/football sem expor a chave no browser.</p></article></div></section>
-  </main>
-  <footer>Mundial 2026 Hub - pronto para deploy no Vercel.</footer>
-  <script src="data.js"></script>
-  <script src="app.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mundial 2026 - Guia Completo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="topbar" aria-label="Navegacao principal">
+        <a class="brand" href="#topo">Mundial 2026</a>
+        <div class="topbar__links">
+          <a href="#guia">Guia</a><a href="#jogos">Jogos</a><a href="#cidades">Cidades</a><a href="#selecoes">Selecoes</a><a href="#historias">Historias</a>
+        </div>
+      </nav>
+      <section id="topo" class="hero__content">
+        <p class="eyebrow">Canada - Mexico - United States</p>
+        <h1>O guia visual para viver o Mundial de Futebol 2026.</h1>
+        <p>Tudo o que interessa acompanhar: formato, calendario, estadios, cidades anfitrias, selecoes, jogos de abertura, historias e curiosidades do maior Mundial de sempre.</p>
+        <div class="hero__actions"><a class="button button--gold" href="#jogos">Ver calendario</a><a class="button button--clear" href="#cidades">Explorar cidades</a></div>
+      </section>
+    </header>
+    <main>
+      <section id="guia" class="scoreboard" aria-label="Resumo do torneio"><article><strong>48</strong><span>selecoes</span></article><article><strong>104</strong><span>jogos</span></article><article><strong>16</strong><span>cidades anfitrias</span></article><article><strong>3</strong><span>paises organizadores</span></article></section>
+      <section class="section intro-grid"><div><p class="eyebrow">Formato 2026</p><h2>Maior, mais longo e espalhado por tres paises.</h2><p>Pela primeira vez, o torneio junta 48 equipas em 12 grupos de 4. Avancam os dois primeiros de cada grupo e os oito melhores terceiros, criando uma ronda extra antes dos oitavos tradicionais.</p></div><div class="format-card"><span>Fase de grupos</span><strong>11 a 27 junho</strong><span>Ronda de 32</span><strong>28 junho a 3 julho</strong><span>Final</span><strong>19 julho - New York/New Jersey</strong></div></section>
+      <section id="jogos" class="section"><div class="section__heading"><div><p class="eyebrow">Arranque do torneio</p><h2>Jogos e momentos a seguir</h2></div></div><div id="matchGrid" class="match-grid"></div></section>
+      <section id="cidades" class="section city-section"><div class="section__heading"><div><p class="eyebrow">Host cities</p><h2>Mapa emocional das cidades anfitrias</h2><p>Cada cidade traz uma identidade propria: relvados gigantes, skylines norte-americanas, altitude mexicana, comunidades de emigrantes e estadios preparados para noites globais.</p></div></div><div id="cityGrid" class="city-grid"></div></section>
+      <section id="selecoes" class="section"><div class="section__heading"><div><p class="eyebrow">Selecoes</p><h2>Perfis rapidos para entrar no torneio</h2></div><input id="teamSearch" type="search" placeholder="Pesquisar selecao..." /></div><div id="teamGrid" class="team-grid"></div></section>
+      <section id="historias" class="section stories"><div><p class="eyebrow">Curiosidades</p><h2>Historias que dao vida ao Mundial</h2></div><div id="storyGrid" class="story-grid"></div></section>
+    </main>
+    <footer class="footer"><span>Mundial 2026 Guia</span><span>Site informativo, sem uso de marcas oficiais FIFA.</span></footer>
+    <script src="data.js"></script><script src="app.js"></script>
+  </body>
 </html>
