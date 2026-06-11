@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mundial 2026 Hub</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav><strong>Mundial 2026 Hub</strong><a href="#jogos">Jogos</a><a href="#selecoes">Selecoes</a><a href="#estadios">Estadios</a><a href="#dados">Dados</a></nav>
+    <section class="hero-copy">
+      <p>FIFA World Cup 2026</p>
+      <h1>Centro inteligente para acompanhar o Mundial em tempo real.</h1>
+      <p>Resultados, calendario, estatisticas, jogadores, estadios, curiosidades e previsoes comparadas com o resultado final.</p>
+      <a class="button" href="#jogos">Ver match center</a>
+    </section>
+  </header>
+  <main>
+    <section class="stats">
+      <article><strong id="matchCount">0</strong><span>jogos monitorizados</span></article>
+      <article><strong id="dataState">Fallback</strong><span>origem dos dados</span></article>
+      <article><strong>16</strong><span>estadios anfitrioes</span></article>
+      <article><strong>48</strong><span>selecoes</span></article>
+    </section>
+    <section id="jogos" class="section">
+      <div class="heading"><div><p class="eyebrow">Match center</p><h2>Resultados e estatisticas</h2><p id="sourceNote"></p></div><div class="filters"><button data-filter="all" class="active">Todos</button><button data-filter="live">Ao vivo</button><button data-filter="finished">Final</button><button data-filter="upcoming">Proximos</button></div></div>
+      <div id="matchGrid" class="grid"></div>
+    </section>
+    <section id="previsoes" class="section split"><div><p class="eyebrow">Modelo</p><h2>Previsoes vs. resultado final</h2><p>As previsoes ficam guardadas antes do jogo e podem ser auditadas depois do apito final.</p></div><div id="predictionTable" class="panel"></div></section>
+    <section id="selecoes" class="section"><div class="heading"><div><p class="eyebrow">Selecoes</p><h2>Plantel e curiosidades</h2></div><input id="teamSearch" placeholder="Pesquisar selecao" /></div><div id="teamGrid" class="grid"></div></section>
+    <section id="estadios" class="section"><p class="eyebrow">Cidades anfitrias</p><h2>Estadios do Mundial 2026</h2><div id="stadiumList" class="list"></div></section>
+    <section id="dados" class="section split"><div><p class="eyebrow">Arquitetura</p><h2>Ligacao aos sistemas certos</h2><p>O Google ajuda como referencia visual, mas o produto deve usar uma API licenciada. A API key fica protegida no backend Vercel.</p></div><div class="grid two"><article><h3>API-Football</h3><p>Fixtures, placares, eventos, equipas, estadios e previsoes.</p></article><article><h3>Vercel</h3><p>Endpoint serverless em /api/football sem expor a chave no browser.</p></article></div></section>
+  </main>
+  <footer>Mundial 2026 Hub - pronto para deploy no Vercel.</footer>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
